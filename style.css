@@ -1,0 +1,183 @@
+/*
+==================
+Fonts
+==================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/*
+==================
+Variables
+==================
+*/
+:root {
+  /* primary */
+  --clr-violet: hsl(257, 40%, 49%);
+  --clr-soft-magenta: hsl(300, 69%, 71%);
+  --clr-white: #fff;
+  --clr-black: #000;
+  --ff-primary: 'Poppins', sans-serif;
+  --ff-secondary: 'Open Sans', sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+/*
+==================
+Global Styles
+==================
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img:not(.logo) {
+  width: 100%;
+}
+img {
+  display: block;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  color: var(--clr-white);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+h1 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25rem;
+  margin-bottom: 1rem;
+  font-family: var(--ff-primary);
+  font-weight: 600;
+}
+p {
+  margin-bottom: 1.5rem;
+  font-family: var(--ff-secondary);
+  font-weight: 400;
+  line-height: 2rem;
+} 
+/* global classes */
+.btn {
+  background: var(--clr-white);
+  color: var(--clr-violet);
+  padding: 0.8rem 5rem;
+  display: inline-block;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  border: none;
+}
+.btn:hover {
+  background-color: var(--clr-soft-magenta);
+  color: var(--clr-white);
+}
+
+/*
+=================
+container
+=================
+*/
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: url(./images/bg-mobile.svg) top/contain no-repeat;
+  background-color: var(--clr-violet);
+  padding: 2rem 3rem;
+}
+.hero {
+  margin-bottom: 5rem;
+  width: 100%;
+}
+.logo {
+  width: 10rem;
+  height: 5rem;
+  margin-bottom: 3rem;
+}
+.mockups {
+  max-width: 800px;
+}
+@media screen and (min-width: 1025px) {
+  .container {
+    background: url(./images/bg-desktop.svg) right/cover no-repeat;
+    background-color: var(--clr-violet);
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+  .logo {
+    width: 15rem;
+    height: 6rem;
+  }
+}
+
+.main {
+  width: 100%;
+}
+.title {
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  line-height: 3rem;
+  text-align: center;
+}  
+.description {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.btn {
+  display: block;
+  margin: 2rem auto 3rem;
+}
+.links {
+  text-align: center;
+}
+.links li {
+  display: inline-block;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+}
+.links a {
+  color: var(--clr-white);
+  transition: var(--transition);
+}
+.links a:hover {
+  color: var(--clr-soft-magenta);
+}
+@media screen and (min-width: 1025px) {
+  .title {
+    font-size: 2.2rem;
+    text-align: left;
+  }
+  .description {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  .btn {
+    margin: 2rem 0;
+    padding: 1rem 5rem;
+  }
+  .links {
+    position: fixed;
+    right: 5rem;
+    bottom: 2rem;
+  }
+}
